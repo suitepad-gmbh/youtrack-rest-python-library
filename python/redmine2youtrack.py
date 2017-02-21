@@ -188,6 +188,9 @@ class RedmineImporter(object):
         self._import_issues(project)
 
     def _to_yt_user(self, redmine_user):
+	if hasattr(redmine_user, 'id'):
+            if redmine_user.id == '2':
+                redmine_user.id = '5'
         if isinstance(redmine_user, basestring):
             user_id = redmine_user
         else:
