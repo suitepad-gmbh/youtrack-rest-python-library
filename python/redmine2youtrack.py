@@ -618,7 +618,7 @@ class RedmineImporter(object):
                         print "Cannot apply link (%s) to issues: %d and %d" % \
                             (link_type, from_id, to_id)
                         print "Some issues were not imported to YouTrack"
-                        raise e
+                        continue
                     links.append(link)
                     if len(links) >= limit:
                         self._target.importLinks(links)
